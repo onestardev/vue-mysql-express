@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/assets/custom.css">
+    <title>usermanage</title>
+  </head>
+  <body>
+  	<div class="main-container">
+	  <div class="header">
+	      <nav class="navbar navbar-default">
+	        <div class="container-fluid">
+	            <div class="navbar-header">
+	              <a class="navbar-brand" href="#">My site</a>
+	            </div>
+	        </div>
+	      </nav>
+		      <div class="top-right links">
+			      <template v-if="authenticated">
+			        <li>Home</li>
+			      </template>
+			      <template v-else>
+			      	<li>Home</li>
+			        <router-link :to="{ name: 'login' }">
+			          {{ $t('login') }}
+			        </router-link>
+			        <router-link :to="{ name: 'register' }">
+			          {{ $t('register') }}
+			        </router-link>
+			      </template>
+	    	</div>
+	  </div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
